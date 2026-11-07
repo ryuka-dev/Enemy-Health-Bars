@@ -12,35 +12,13 @@ Sulfur and Rounds follow the game's UI color, so they change with the HUD in are
 
 ![The five bar styles in the desert colors](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-desert.png)
 
-### Sulfur
-
-![Sulfur style on a group of spearmen](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-spearmen.gif)
-
-![Sulfur style on a Barrel Boy](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-barrel-boy.gif)
-
-### Rounds
-
-![Rounds style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/rounds-spearmen.gif)
-
-### Bone
-
-![Bone style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/bone-spearmen.gif)
-
-### Ichor
-
-An enemy that dies from a single hit never shows a bar.
-
-![Ichor style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/ichor-spearmen.gif)
-
 ## In combat
-
-![Sulfur style in a street fight](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-1.gif)
 
 ![Sulfur style against several enemies](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-2.gif)
 
-![Sulfur style through a doorway](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-3.gif)
+## [Watch every style in action on GitHub](https://github.com/ryuka-dev/Enemy-Health-Bars/blob/main/docs/GALLERY.md)
 
-![Classic style in a boss arena](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/classic-combat.gif)
+8 more clips, covering each style and more fights. They are GIFs of 3 to 18 MB each, about 76 MB in total, so the page can take a while on a slow connection.
 
 ## Design
 
@@ -63,3 +41,7 @@ dotnet build "Enemy Health Bars.csproj" -t:Restore;Compile -v:m -nologo
 ```
 
 Deployment is off by default. Pass `-p:DeployToSulfurProfile=true` to a full build to copy the plugin into the configured Gale profile.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
