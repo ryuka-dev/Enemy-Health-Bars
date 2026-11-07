@@ -2,6 +2,46 @@
 
 Standalone enemy health bars for SULFUR, a BepInEx 5 plugin. Player documentation is in [Thunderstore/README.md](Thunderstore/README.md).
 
+## Bar styles
+
+Five looks, all shown at the moment an enemy takes a hit: the red part is the health left, and the pale part is the health just lost.
+
+![The five bar styles](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-default.png)
+
+Sulfur and Rounds follow the game's UI color, so they change with the HUD in areas like the desert.
+
+![The five bar styles in the desert colors](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-desert.png)
+
+### Sulfur
+
+![Sulfur style on a group of spearmen](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-spearmen.gif)
+
+![Sulfur style on a Barrel Boy](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-barrel-boy.gif)
+
+### Rounds
+
+![Rounds style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/rounds-spearmen.gif)
+
+### Bone
+
+![Bone style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/bone-spearmen.gif)
+
+### Ichor
+
+An enemy that dies from a single hit never shows a bar.
+
+![Ichor style](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/ichor-spearmen.gif)
+
+## In combat
+
+![Sulfur style in a street fight](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-1.gif)
+
+![Sulfur style against several enemies](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-2.gif)
+
+![Sulfur style through a doorway](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-3.gif)
+
+![Classic style in a boss arena](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/classic-combat.gif)
+
 ## Design
 
 - `HealthBarManager` owns the overlay canvas, the bar pool and the per-enemy cache. It reads `GameManager.aliveNpcs` every 0.1 s and notices damage by comparing `normalizedHealth`. That works the same on a co-op client, where hits from other players do not run the local damage path.
