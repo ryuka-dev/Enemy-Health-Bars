@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Paski zdrowia dla zranionych wrogów. Uwzględnia linię wzroku i nigdy nie ujawnia ukrytych wrogów."
+      "value": "Paski zdrowia dla trafionych wrogów. Brak pasków przez ściany, a ukryci wrogowie pozostają ukryci."
     },
     {
       "key": "section.Display",

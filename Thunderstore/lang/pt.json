@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Barras de vida para inimigos que você feriu. Respeita a linha de visão e nunca revela inimigos ocultos."
+      "value": "Barras de vida para os inimigos que você acerta. Nada de barras através das paredes, e inimigos ocultos continuam ocultos."
     },
     {
       "key": "section.Display",

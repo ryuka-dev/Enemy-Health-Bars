@@ -1,10 +1,10 @@
 # Gallery
 
-Every clip is a GIF recorded in game. There are 9 of them, about 92 MB in total, and each one shows its size so you know what to expect on a slow connection.
+All 9 clips are GIFs recorded in game, about 92 MB in total. Each one lists its size in case you're on a slow connection.
 
 ## Bar styles
 
-All five at the moment an enemy takes a hit: the red part is the health left, and the pale part is the health just lost.
+All five styles, caught right as an enemy takes a hit. The red part is the health left, and the pale part is what that hit just took off.
 
 ![The five bar styles](https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-default.png)
 
@@ -36,7 +36,7 @@ Sulfur and Rounds follow the game's UI color, so they change with the HUD in are
 
 ## Ichor
 
-An enemy that dies from a single hit never shows a bar.
+The first enemy dies in one shot, so it never gets a bar.
 
 **`ichor-spearmen.gif`** (8.9 MB)
 

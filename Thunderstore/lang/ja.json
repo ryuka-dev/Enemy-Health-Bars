@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "ダメージを与えた敵に体力バーを表示します。視線を考慮し、隠れた敵を暴くことはありません。"
+      "value": "ダメージを与えた敵に体力バーを表示します。壁越しには表示されず、隠れている敵の位置も分かりません。"
     },
     {
       "key": "section.Display",
@@ -22,15 +22,15 @@
     },
     {
       "key": "entry.Display.DisplayMode.description",
-      "value": "被弾時：敵が体力を失った後、数秒間表示します。近く：範囲内の見えている敵すべてに表示します。"
+      "value": "ダメージ時：敵が体力を失うと数秒間表示します。近くの敵：範囲内の見えている敵すべてに表示します。"
     },
     {
       "key": "value.Display.DisplayMode.Damaged",
-      "value": "被弾時"
+      "value": "ダメージ時"
     },
     {
       "key": "value.Display.DisplayMode.Nearby",
-      "value": "近く"
+      "value": "近くの敵"
     },
     {
       "key": "entry.Display.BarStyle.name",
@@ -38,7 +38,7 @@
     },
     {
       "key": "entry.Display.BarStyle.description",
-      "value": "バーの見た目。サルファー：ゲーム本来の体力バーに合わせ、UIカラーに追従します。弾痕：弾薬ゲージのように10個のリングが並びます。黒液：滴るインクの筋です。骸骨：バーの先端に頭蓋骨が付きます。クラシック：シンプルなバーです。"
+      "value": "バーの見た目。サルファー：HUDの体力バーと同じデザインで、色もHUDに合わせて変わります。弾薬：弾薬ゲージのように10個のリングが並びます。黒液：インクが滴るバーです。骸骨：左端に頭蓋骨が付きます。クラシック：シンプルなバーです。"
     },
     {
       "key": "value.Display.BarStyle.Sulfur",
@@ -46,7 +46,7 @@
     },
     {
       "key": "value.Display.BarStyle.Rounds",
-      "value": "弾痕"
+      "value": "弾薬"
     },
     {
       "key": "value.Display.BarStyle.Ichor",

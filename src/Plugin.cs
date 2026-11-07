@@ -31,9 +31,9 @@ namespace EnemyHealthBars
             Mode = Config.Bind("Display", "DisplayMode", BarDisplayMode.Damaged,
                 "Damaged shows a bar for a few seconds after an enemy loses health. Nearby shows a bar on every enemy in range that you can see.");
             Style = Config.Bind("Display", "BarStyle", BarStyleId.Sulfur,
-                "Look of the bars. Sulfur matches the game's own health bar and follows its UI color. Rounds is a row of ten rings like the ammo gauge. Ichor is a run of dripping ink. Bone has a skull at the head of the bar. Classic is a plain bar.");
+                "Look of the bars. Sulfur matches the HUD health bar and follows its color. Rounds is a row of ten rings like the ammo gauge. Ichor is a bar of dripping ink. Bone has a skull at its left end. Classic is a plain bar.");
             MaxDistance = Config.Bind("Display", "MaxDistance", 30f,
-                new ConfigDescription("Farthest distance in meters at which a bar is shown.",
+                new ConfigDescription("How far away a bar can still show, in meters.",
                     new AcceptableValueRange<float>(5f, 100f)));
             BarScale = Config.Bind("Display", "BarScale", 1f,
                 new ConfigDescription("Size of the bars and names.",
@@ -41,7 +41,7 @@ namespace EnemyHealthBars
             ShowName = Config.Bind("Display", "ShowName", true,
                 "Show the enemy's name above its bar.");
             DebugLog = Config.Bind("Debug", "DebugLog", false,
-                "Write bar events to the log. Has no effect on what is shown.");
+                "Write bar events to the log. Doesn't change what you see.");
 
             HealthBarManager.EnsureExists();
 

@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "為受傷的敵人顯示血條。遵守視線遮擋，絕不暴露隱藏的敵人。"
+      "value": "為打中的敵人顯示血條。隔牆不顯示，隱藏的敵人也不會暴露。"
     },
     {
       "key": "section.Display",
@@ -38,7 +38,7 @@
     },
     {
       "key": "entry.Display.BarStyle.description",
-      "value": "血條的外觀。硫磺：與遊戲本身的血條一致，並跟隨遊戲介面顏色。彈孔：十個圓環排成一列，如同彈藥量表。黑液：一道滴落的墨跡。骸骨：血條前端帶一個骷髏。經典：樸素的血條。"
+      "value": "血條的外觀。硫磺：和 HUD 血條同款，顏色也跟著 HUD 變。彈藥：十個圓環排成一列，樣子像 HUD 上的彈藥格。黑液：一條滴著墨的血條。骸骨：左端有個骷髏頭。經典：普通的血條。"
     },
     {
       "key": "value.Display.BarStyle.Sulfur",
@@ -46,7 +46,7 @@
     },
     {
       "key": "value.Display.BarStyle.Rounds",
-      "value": "彈孔"
+      "value": "彈藥"
     },
     {
       "key": "value.Display.BarStyle.Ichor",

@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Health bars for enemies you have hurt. Respects line of sight and never reveals hidden enemies."
+      "value": "Health bars for enemies you hit. No bars through walls, and hidden enemies stay hidden."
     },
     {
       "key": "section.Display",
@@ -38,7 +38,7 @@
     },
     {
       "key": "entry.Display.BarStyle.description",
-      "value": "Look of the bars. Sulfur matches the game's own health bar and follows its UI color. Rounds is a row of ten rings like the ammo gauge. Ichor is a run of dripping ink. Bone has a skull at the head of the bar. Classic is a plain bar."
+      "value": "Look of the bars. Sulfur matches the HUD health bar and follows its color. Rounds is a row of ten rings like the ammo gauge. Ichor is a bar of dripping ink. Bone has a skull at its left end. Classic is a plain bar."
     },
     {
       "key": "value.Display.BarStyle.Sulfur",
@@ -66,7 +66,7 @@
     },
     {
       "key": "entry.Display.MaxDistance.description",
-      "value": "Farthest distance in meters at which a bar is shown."
+      "value": "How far away a bar can still show, in meters."
     },
     {
       "key": "entry.Display.BarScale.name",
@@ -90,7 +90,7 @@
     },
     {
       "key": "entry.Debug.DebugLog.description",
-      "value": "Write bar events to the log. Has no effect on what is shown."
+      "value": "Write bar events to the log. Doesn't change what you see."
     }
   ]
 }

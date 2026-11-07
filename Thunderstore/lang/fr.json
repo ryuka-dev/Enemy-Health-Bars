@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Des barres de vie pour les ennemis que vous avez blessés. Respecte la ligne de vue et ne révèle jamais les ennemis cachés."
+      "value": "Des barres de vie pour les ennemis que vous touchez. Pas de barre à travers les murs, et les ennemis cachés le restent."
     },
     {
       "key": "section.Display",

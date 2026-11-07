@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Lebensbalken für Gegner, die du verletzt hast. Beachtet die Sichtlinie und verrät niemals versteckte Gegner."
+      "value": "Lebensbalken für Gegner, die du triffst. Keine Balken durch Wände, und versteckte Gegner bleiben versteckt."
     },
     {
       "key": "section.Display",
@@ -38,7 +38,7 @@
     },
     {
       "key": "entry.Display.BarStyle.description",
-      "value": "Aussehen der Balken. Sulfur entspricht dem Lebensbalken des Spiels und folgt dessen UI-Farbe. Patronen ist eine Reihe aus zehn Ringen wie die Munitionsanzeige. Tinte ist eine tropfende Tintenspur. Knochen hat einen Schädel am Anfang des Balkens. Klassisch ist ein schlichter Balken."
+      "value": "Aussehen der Balken. Sulfur entspricht dem Lebensbalken des Spiels und folgt der UI-Farbe. Patronen ist eine Reihe aus zehn Ringen wie die Munitionsanzeige. Tinte ist eine tropfende Tintenspur. Knochen hat einen Schädel am Anfang des Balkens. Klassisch ist ein schlichter Balken."
     },
     {
       "key": "value.Display.BarStyle.Sulfur",

@@ -6,7 +6,7 @@
     },
     {
       "key": "plugin.description",
-      "value": "Hälsomätare för fiender du har skadat. Tar hänsyn till siktlinjen och avslöjar aldrig dolda fiender."
+      "value": "Hälsomätare för fiender du träffar. Inga mätare genom väggar, och dolda fiender förblir dolda."
     },
     {
       "key": "section.Display",
@@ -38,7 +38,7 @@
     },
     {
       "key": "entry.Display.BarStyle.description",
-      "value": "Mätarnas utseende. Sulfur matchar spelets egen hälsomätare och följer dess gränssnittsfärg. Patroner är en rad med tio ringar som ammunitionsmätaren. Bläck är en droppande bläckstrimma. Ben har en dödskalle i början av mätaren. Klassisk är en enkel mätare."
+      "value": "Mätarnas utseende. Sulfur matchar spelets egen hälsomätare och följer gränssnittsfärgen. Patroner är en rad med tio ringar som ammunitionsmätaren. Bläck är en droppande bläckstrimma. Ben har en dödskalle i början av mätaren. Klassisk är en enkel mätare."
     },
     {
       "key": "value.Display.BarStyle.Sulfur",
