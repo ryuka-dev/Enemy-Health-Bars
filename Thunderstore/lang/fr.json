@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Des barres de vie pour les ennemis que vous avez blessés. Respecte la ligne de vue et ne révèle jamais les ennemis cachés."
+    },
+    {
+      "key": "section.Display",
+      "value": "Affichage"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Débogage"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Mode d'affichage"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Blessés affiche une barre pendant quelques secondes après qu'un ennemi a perdu de la vie. À proximité affiche une barre sur chaque ennemi visible à portée."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Blessés"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "À proximité"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Distance maximale"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Distance maximale en mètres à laquelle une barre est affichée."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Taille des barres"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Taille des barres et des noms."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Afficher le nom"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Affiche le nom de l'ennemi au-dessus de sa barre."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Journal de débogage"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Écrit les événements des barres dans le journal. N'a aucun effet sur l'affichage."
+    }
+  ]
+}

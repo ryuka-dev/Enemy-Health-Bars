@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Полоски здоровья для раненых врагов. Учитывают линию видимости и никогда не выдают скрытых врагов."
+    },
+    {
+      "key": "section.Display",
+      "value": "Вид"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Отладка"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Режим отображения"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Раненые: полоска появляется на несколько секунд после потери здоровья. Рядом: полоска у каждого видимого врага в радиусе."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Раненые"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "Рядом"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Максимальная дистанция"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Наибольшая дистанция в метрах, на которой видна полоска."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Размер полоски"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Размер полосок и имён."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Показывать имя"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Показывать имя врага над полоской."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Журнал отладки"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Записывает события полосок в журнал. Не влияет на отображение."
+    }
+  ]
+}

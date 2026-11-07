@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "ダメージを与えた敵に体力バーを表示します。視線を考慮し、隠れた敵を暴くことはありません。"
+    },
+    {
+      "key": "section.Display",
+      "value": "表示"
+    },
+    {
+      "key": "section.Debug",
+      "value": "デバッグ"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "表示モード"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "被弾時：敵が体力を失った後、数秒間表示します。近く：範囲内の見えている敵すべてに表示します。"
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "被弾時"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "近く"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "最大距離"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "バーを表示する最大距離（メートル）。"
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "バーのサイズ"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "バーと名前の大きさ。"
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "名前を表示"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "バーの上に敵の名前を表示します。"
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "デバッグログ"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "バーのイベントをログに書き込みます。表示内容には影響しません。"
+    }
+  ]
+}

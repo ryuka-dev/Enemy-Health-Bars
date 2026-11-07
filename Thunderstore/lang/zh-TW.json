@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "為受傷的敵人顯示血條。遵守視線遮擋，絕不暴露隱藏的敵人。"
+    },
+    {
+      "key": "section.Display",
+      "value": "顯示"
+    },
+    {
+      "key": "section.Debug",
+      "value": "除錯"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "顯示模式"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "受傷時：敵人損血後顯示幾秒。附近：顯示範圍內所有看得到的敵人。"
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "受傷時"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "附近"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "最大距離"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "顯示血條的最遠距離（公尺）。"
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "血條大小"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "血條和名稱的大小。"
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "顯示名稱"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "在血條上方顯示敵人名稱。"
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "除錯日誌"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "將血條事件寫入日誌。不影響顯示內容。"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Barras de vida para inimigos que você feriu. Respeita a linha de visão e nunca revela inimigos ocultos."
+    },
+    {
+      "key": "section.Display",
+      "value": "Visual"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Depuração"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Modo de exibição"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Feridos mostra uma barra por alguns segundos depois que um inimigo perde vida. Próximos mostra uma barra em cada inimigo visível no alcance."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Feridos"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "Próximos"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Distância máxima"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Distância máxima em metros em que uma barra é exibida."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Tamanho da barra"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Tamanho das barras e dos nomes."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Mostrar nome"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Mostra o nome do inimigo acima da barra."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Registro de depuração"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Grava os eventos das barras no registro. Não afeta o que é exibido."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "为受伤的敌人显示血条。遵守视线遮挡，绝不暴露隐藏的敌人。"
+    },
+    {
+      "key": "section.Display",
+      "value": "显示"
+    },
+    {
+      "key": "section.Debug",
+      "value": "调试"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "显示模式"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "受伤时：敌人掉血后显示几秒。附近：显示范围内所有能看到的敌人。"
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "受伤时"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "附近"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "最大距离"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "显示血条的最远距离（米）。"
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "血条大小"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "血条和名字的大小。"
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "显示名字"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "在血条上方显示敌人名字。"
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "调试日志"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "把血条事件写入日志。不影响显示内容。"
+    }
+  ]
+}

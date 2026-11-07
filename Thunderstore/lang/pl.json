@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Paski zdrowia dla zranionych wrogów. Uwzględnia linię wzroku i nigdy nie ujawnia ukrytych wrogów."
+    },
+    {
+      "key": "section.Display",
+      "value": "Wygląd"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Debug"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Tryb wyświetlania"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Zranieni: pasek pojawia się na kilka sekund po utracie zdrowia przez wroga. W pobliżu: pasek przy każdym widocznym wrogu w zasięgu."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Zranieni"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "W pobliżu"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Maksymalny dystans"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Największa odległość w metrach, z której widać pasek."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Rozmiar paska"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Rozmiar pasków i nazw."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Pokaż nazwę"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Pokazuje nazwę wroga nad paskiem."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Dziennik debugowania"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Zapisuje zdarzenia pasków w dzienniku. Nie wpływa na to, co jest wyświetlane."
+    }
+  ]
+}

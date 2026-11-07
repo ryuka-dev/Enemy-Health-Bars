@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "أشرطة صحة للأعداء الذين أصبتهم. تراعي خط الرؤية ولا تكشف الأعداء المختبئين أبدًا."
+    },
+    {
+      "key": "section.Display",
+      "value": "المظهر"
+    },
+    {
+      "key": "section.Debug",
+      "value": "التصحيح"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "وضع العرض"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "المصابون: يظهر الشريط لبضع ثوانٍ بعد أن يفقد العدو صحته. القريبون: يظهر شريط لكل عدو مرئي ضمن المدى."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "المصابون"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "القريبون"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "أقصى مسافة"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "أبعد مسافة بالأمتار يظهر عندها الشريط."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "حجم الشريط"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "حجم الأشرطة والأسماء."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "إظهار الاسم"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "إظهار اسم العدو فوق شريطه."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "سجل التصحيح"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "يكتب أحداث الأشرطة في السجل. لا يؤثر في ما يُعرض."
+    }
+  ]
+}

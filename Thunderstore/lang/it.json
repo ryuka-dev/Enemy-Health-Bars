@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Barre della salute per i nemici che hai ferito. Rispetta la linea di vista e non rivela mai i nemici nascosti."
+    },
+    {
+      "key": "section.Display",
+      "value": "Aspetto"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Debug"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Modalità di visualizzazione"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Feriti mostra una barra per qualche secondo dopo che un nemico ha perso salute. Vicini mostra una barra su ogni nemico visibile nel raggio."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Feriti"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "Vicini"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Distanza massima"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Distanza massima in metri a cui viene mostrata una barra."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Dimensione barra"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Dimensione di barre e nomi."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Mostra nome"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Mostra il nome del nemico sopra la barra."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Registro di debug"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Scrive gli eventi delle barre nel registro. Non influisce su ciò che viene mostrato."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Hälsomätare för fiender du har skadat. Tar hänsyn till siktlinjen och avslöjar aldrig dolda fiender."
+    },
+    {
+      "key": "section.Display",
+      "value": "Visuellt"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Debug"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Visningsläge"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Skadade visar en mätare i några sekunder efter att en fiende förlorat hälsa. I närheten visar en mätare på varje synlig fiende inom räckhåll."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Skadade"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "I närheten"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Största avstånd"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Största avstånd i meter där en mätare visas."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Mätarstorlek"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Storleken på mätare och namn."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Visa namn"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Visar fiendens namn ovanför mätaren."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Felsökningslogg"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Skriver mätarhändelser till loggen. Påverkar inte vad som visas."
+    }
+  ]
+}

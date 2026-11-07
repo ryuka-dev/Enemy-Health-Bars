@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Health bars for enemies you have hurt. Respects line of sight and never reveals hidden enemies."
+    },
+    {
+      "key": "section.Display",
+      "value": "Display"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Debug"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Display mode"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Damaged shows a bar for a few seconds after an enemy loses health. Nearby shows a bar on every enemy in range that you can see."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Damaged"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "Nearby"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Max distance"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Farthest distance in meters at which a bar is shown."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Bar scale"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Size of the bars and names."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Show name"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Show the enemy's name above its bar."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Debug log"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Write bar events to the log. Has no effect on what is shown."
+    }
+  ]
+}

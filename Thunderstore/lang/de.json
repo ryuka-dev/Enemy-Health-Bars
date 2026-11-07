@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Lebensbalken für Gegner, die du verletzt hast. Beachtet die Sichtlinie und verrät niemals versteckte Gegner."
+    },
+    {
+      "key": "section.Display",
+      "value": "Anzeige"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Debug"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Anzeigemodus"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Verletzt zeigt einen Balken für einige Sekunden, nachdem ein Gegner Leben verloren hat. In der Nähe zeigt einen Balken für jeden sichtbaren Gegner in Reichweite."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Verletzt"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "In der Nähe"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Maximale Entfernung"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Größte Entfernung in Metern, bei der ein Balken angezeigt wird."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Balkengröße"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Größe der Balken und Namen."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "Namen anzeigen"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Zeigt den Namen des Gegners über dem Balken an."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Debug-Protokoll"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Schreibt Balken-Ereignisse ins Protokoll. Hat keinen Einfluss auf die Anzeige."
+    }
+  ]
+}

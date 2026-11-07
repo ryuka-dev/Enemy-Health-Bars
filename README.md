@@ -1,0 +1,24 @@
+# Enemy Health Bars
+
+Standalone enemy health bars for SULFUR, a BepInEx 5 plugin. Player documentation is in [Thunderstore/README.md](Thunderstore/README.md).
+
+## Design
+
+- `HealthBarManager` owns the overlay canvas, the bar pool and the per-enemy cache. It reads `GameManager.aliveNpcs` every 0.1 s and notices damage by comparing `normalizedHealth`. That works the same on a co-op client, where hits from other players do not run the local damage path.
+- `EnemyRules` decides which units may carry a bar. Checks that can change run every frame while a bar is showing.
+- `BossBarTracker` follows `BossHealth.Attach` and `Detach`, because the boss bar can follow a unit that is not flagged as a boss. These are the only Harmony patches.
+- `HealthBarView` is one pooled bar. It holds no game references.
+
+The mod changes no gameplay state. The cache in `TrackedEnemy` is never treated as authoritative.
+
+Hidden enemies have several unrelated mechanisms, and each needs its own check: `isInvisible`, `Npc.HiddenMode`, `Unit.Targetable`, `HellShrewSnipa.IsHidden`, a deactivated `mainRenderer` (pike riders), and the private `unitOpacity` pair on `Npc`, which is the only record of a ghost fading out.
+
+## Build
+
+Paths come from `Directory.Build.props` and can be overridden on the command line.
+
+```text
+dotnet build "Enemy Health Bars.csproj" -t:Restore;Compile -v:m -nologo
+```
+
+Deployment is off by default. Pass `-p:DeployToSulfurProfile=true` to a full build to copy the plugin into the configured Gale profile.

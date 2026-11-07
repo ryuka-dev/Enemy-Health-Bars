@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "Yaraladığın düşmanlar için can çubukları. Görüş hattını dikkate alır ve gizli düşmanları asla ele vermez."
+    },
+    {
+      "key": "section.Display",
+      "value": "Görsel"
+    },
+    {
+      "key": "section.Debug",
+      "value": "Hata Ayıklama"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "Görüntüleme modu"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "Yaralılar: düşman can kaybettikten sonra birkaç saniye çubuk gösterir. Yakındakiler: menzildeki her görünür düşmanda çubuk gösterir."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "Yaralılar"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "Yakındakiler"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "Azami mesafe"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "Çubuğun gösterildiği en uzak mesafe (metre)."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "Çubuk boyutu"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "Çubukların ve isimlerin boyutu."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "İsmi göster"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "Düşmanın ismini çubuğunun üstünde gösterir."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "Hata ayıklama günlüğü"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "Çubuk olaylarını günlüğe yazar. Gösterilenleri etkilemez."
+    }
+  ]
+}

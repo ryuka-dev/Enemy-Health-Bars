@@ -1,0 +1,9 @@
+{
+  "name": "Enemy_Health_Bars",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/ryuka-dev/Enemy-Health-Bars",
+  "description": "Standalone health bars for enemies you have hurt. Respects line of sight and never reveals hidden enemies.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305"
+  ]
+}

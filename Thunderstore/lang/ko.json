@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "key": "plugin.name",
+      "value": "Enemy Health Bars"
+    },
+    {
+      "key": "plugin.description",
+      "value": "피해를 입힌 적에게 체력 바를 표시합니다. 시야를 고려하며 숨은 적을 드러내지 않습니다."
+    },
+    {
+      "key": "section.Display",
+      "value": "표시"
+    },
+    {
+      "key": "section.Debug",
+      "value": "디버그"
+    },
+    {
+      "key": "entry.Display.DisplayMode.name",
+      "value": "표시 모드"
+    },
+    {
+      "key": "entry.Display.DisplayMode.description",
+      "value": "피해 시: 적이 체력을 잃은 뒤 몇 초간 표시합니다. 근처: 범위 내에서 보이는 모든 적에게 표시합니다."
+    },
+    {
+      "key": "value.Display.DisplayMode.Damaged",
+      "value": "피해 시"
+    },
+    {
+      "key": "value.Display.DisplayMode.Nearby",
+      "value": "근처"
+    },
+    {
+      "key": "entry.Display.MaxDistance.name",
+      "value": "최대 거리"
+    },
+    {
+      "key": "entry.Display.MaxDistance.description",
+      "value": "바를 표시하는 최대 거리(미터)."
+    },
+    {
+      "key": "entry.Display.BarScale.name",
+      "value": "바 크기"
+    },
+    {
+      "key": "entry.Display.BarScale.description",
+      "value": "바와 이름의 크기."
+    },
+    {
+      "key": "entry.Display.ShowName.name",
+      "value": "이름 표시"
+    },
+    {
+      "key": "entry.Display.ShowName.description",
+      "value": "바 위에 적의 이름을 표시합니다."
+    },
+    {
+      "key": "entry.Debug.DebugLog.name",
+      "value": "디버그 로그"
+    },
+    {
+      "key": "entry.Debug.DebugLog.description",
+      "value": "바 이벤트를 로그에 기록합니다. 표시 내용에는 영향을 주지 않습니다."
+    }
+  ]
+}
