@@ -33,6 +33,34 @@
       "value": "附近"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "血條樣式"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "血條的外觀。硫磺：與遊戲本身的血條一致，並跟隨遊戲介面顏色。彈孔：十個圓環排成一列，如同彈藥量表。黑液：一道滴落的墨跡。骸骨：血條前端帶一個骷髏。經典：樸素的血條。"
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "硫磺"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "彈孔"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "黑液"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "骸骨"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "經典"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "最大距離"
     },

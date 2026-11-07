@@ -33,6 +33,34 @@
       "value": "W pobliżu"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Styl paska"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Wygląd pasków. Sulfur odpowiada paskowi zdrowia z gry i podąża za kolorem jej interfejsu. Naboje to rząd dziesięciu pierścieni jak wskaźnik amunicji. Atrament to spływająca smuga atramentu. Kość ma czaszkę na początku paska. Klasyczny to prosty pasek."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Naboje"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Atrament"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Kość"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Klasyczny"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Maksymalny dystans"
     },

@@ -10,27 +10,25 @@ namespace EnemyHealthBars
     /// </summary>
     internal sealed class HealthBarView
     {
-        private const float Width = 120f;
-        private const float Height = 9f;
-        private const float Border = 1f;
         private const float NameGap = 2f;
         private const float NameFontSize = 18f;
+        private const float NameWidth = 360f;
 
-        private static readonly Color BackColor = new Color(0f, 0f, 0f, 0.65f);
-        private static readonly Color TrailColor = new Color(0.95f, 0.85f, 0.75f, 0.9f);
-        private static readonly Color FillColor = new Color(0.82f, 0.16f, 0.13f, 1f);
         private static readonly Color NameShadowColor = new Color(0f, 0f, 0f, 0.9f);
         private static readonly Vector2 NameShadowOffset = new Vector2(1.5f, -1.5f);
 
         private readonly GameObject _root;
         private readonly RectTransform _rootRect;
         private readonly CanvasGroup _group;
-        private readonly RectTransform _fill;
-        private readonly RectTransform _trail;
+        private readonly Image _back;
+        private readonly Image _trail;
+        private readonly Image _fill;
+        private readonly Image _frame;
         private readonly GameObject _nameRoot;
         private readonly TextMeshProUGUI _name;
         private readonly TextMeshProUGUI _nameShadow;
 
+        private BarStyle _style;
         private string _shownName;
 
         public HealthBarView(Transform parent)
@@ -42,20 +40,15 @@ namespace EnemyHealthBars
             _rootRect.anchorMin = Vector2.zero;
             _rootRect.anchorMax = Vector2.zero;
             _rootRect.pivot = new Vector2(0.5f, 0f);
-            _rootRect.sizeDelta = new Vector2(Width + Border * 2f, Height + Border * 2f);
 
             _group = _root.GetComponent<CanvasGroup>();
             _group.interactable = false;
             _group.blocksRaycasts = false;
 
-            CreateImage("Back", _rootRect, BackColor);
-
-            RectTransform track = CreateImage("Track", _rootRect, Color.clear);
-            track.offsetMin = new Vector2(Border, Border);
-            track.offsetMax = new Vector2(-Border, -Border);
-
-            _trail = CreateImage("Trail", track, TrailColor);
-            _fill = CreateImage("Fill", track, FillColor);
+            _back = CreateImage("Back", false);
+            _trail = CreateImage("Trail", true);
+            _fill = CreateImage("Fill", true);
+            _frame = CreateImage("Frame", false);
 
             _nameRoot = new GameObject("Name", typeof(RectTransform));
             _nameRoot.transform.SetParent(_rootRect, false);
@@ -64,7 +57,7 @@ namespace EnemyHealthBars
             nameRect.anchorMax = new Vector2(0.5f, 1f);
             nameRect.pivot = new Vector2(0.5f, 0f);
             nameRect.anchoredPosition = new Vector2(0f, NameGap);
-            nameRect.sizeDelta = new Vector2(Width * 3f, NameFontSize * 1.5f);
+            nameRect.sizeDelta = new Vector2(NameWidth, NameFontSize * 1.5f);
 
             // A second copy of the text rather than a font outline. Outline width depends on the
             // padding of each font's atlas: the same setting that suits the Latin font eats the
@@ -83,6 +76,22 @@ namespace EnemyHealthBars
             _nameShadow.font = font;
         }
 
+        public void SetStyle(BarStyle style, Color uiColor)
+        {
+            _style = style;
+
+            _rootRect.sizeDelta = style.Size;
+            _back.sprite = style.Back;
+            _trail.sprite = style.Fill;
+            _fill.sprite = style.Fill;
+            _frame.sprite = style.Frame;
+
+            _trail.color = style.TrailColor;
+            _fill.color = style.FillColor;
+            _frame.color = style.FollowsUiColor ? uiColor : Color.white;
+            _name.color = style.NameColor;
+        }
+
         public void Show(Vector2 position, float scale, float alpha, float health, float trail, string name)
         {
             if (!_root.activeSelf) _root.SetActive(true);
@@ -91,8 +100,8 @@ namespace EnemyHealthBars
             _rootRect.localScale = new Vector3(scale, scale, 1f);
             _group.alpha = alpha;
 
-            SetWidth(_fill, health);
-            SetWidth(_trail, trail);
+            _fill.fillAmount = _style.FillAmount(health);
+            _trail.fillAmount = _style.FillAmount(trail);
 
             bool hasName = !string.IsNullOrEmpty(name);
             if (_nameRoot.activeSelf != hasName) _nameRoot.SetActive(hasName);
@@ -110,9 +119,28 @@ namespace EnemyHealthBars
             if (_root.activeSelf) _root.SetActive(false);
         }
 
-        private static void SetWidth(RectTransform bar, float amount)
+        private Image CreateImage(string name, bool filled)
         {
-            bar.anchorMax = new Vector2(amount, 1f);
+            GameObject imageObject = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            imageObject.transform.SetParent(_rootRect, false);
+
+            RectTransform rect = (RectTransform)imageObject.transform;
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.offsetMin = Vector2.zero;
+            rect.offsetMax = Vector2.zero;
+
+            Image image = imageObject.GetComponent<Image>();
+            image.raycastTarget = false;
+
+            if (filled)
+            {
+                image.type = Image.Type.Filled;
+                image.fillMethod = Image.FillMethod.Horizontal;
+                image.fillOrigin = (int)Image.OriginHorizontal.Left;
+            }
+
+            return image;
         }
 
         private static TextMeshProUGUI CreateText(string name, Transform parent, Color color, Vector2 offset)
@@ -134,23 +162,6 @@ namespace EnemyHealthBars
             text.raycastTarget = false;
             text.color = color;
             return text;
-        }
-
-        private static RectTransform CreateImage(string name, Transform parent, Color color)
-        {
-            GameObject imageObject = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
-            imageObject.transform.SetParent(parent, false);
-
-            Image image = imageObject.GetComponent<Image>();
-            image.color = color;
-            image.raycastTarget = false;
-
-            RectTransform rect = (RectTransform)imageObject.transform;
-            rect.anchorMin = Vector2.zero;
-            rect.anchorMax = Vector2.one;
-            rect.offsetMin = Vector2.zero;
-            rect.offsetMax = Vector2.zero;
-            return rect;
         }
     }
 }

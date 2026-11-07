@@ -33,6 +33,34 @@
       "value": "القريبون"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "نمط الشريط"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "مظهر الأشرطة. Sulfur يطابق شريط صحة اللعبة ويتبع لون واجهتها. الطلقات صف من عشر حلقات مثل مؤشر الذخيرة. الحبر خط من الحبر المتساقط. العظم يضع جمجمة في مقدمة الشريط. الكلاسيكي شريط بسيط."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "الطلقات"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "الحبر"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "العظم"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "الكلاسيكي"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "أقصى مسافة"
     },

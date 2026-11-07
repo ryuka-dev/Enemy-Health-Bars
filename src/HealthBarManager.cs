@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using BepInEx.Bootstrap;
 using PerfectRandom.Sulfur.Core;
+using PerfectRandom.Sulfur.Core.UI;
 using PerfectRandom.Sulfur.Core.Units;
 using TMPro;
 using UnityEngine;
@@ -48,6 +49,8 @@ namespace EnemyHealthBars
         private float _nextScanTime;
 
         private TMP_FontAsset _font;
+        private BarStyle _style;
+        private Color _uiColor;
         private bool _languageDirty = true;
         private float _nextFontAttempt;
         private AsyncAssetLoading _languageSource;
@@ -139,6 +142,8 @@ namespace EnemyHealthBars
             _canvas.enabled = true;
 
             if (_languageDirty || _font == null) RefreshFont();
+            RefreshStyle();
+            if (_style == null) return;
 
             float now = Time.time;
             if (now >= _nextScanTime)
@@ -175,6 +180,26 @@ namespace EnemyHealthBars
 
             camera = game.currentCamera;
             return camera != null && camera == script.playerCamera && camera.isActiveAndEnabled;
+        }
+
+        /// <summary>
+        /// Follows the setting and the game's UI color, which changes with the environment. Applied
+        /// to every view at once, so a pooled view is never left in an older look.
+        /// </summary>
+        private void RefreshStyle()
+        {
+            BarStyle style = BarStyle.Get(Plugin.Style.Value);
+            if (style == null) return;
+
+            UIManager ui = StaticInstance<UIManager>.Instance;
+            Color uiColor = ui != null ? ui.CurrentUiColor : SulfurConstants.COLOR_SulfurYellow;
+            if (style == _style && uiColor == _uiColor) return;
+
+            _style = style;
+            _uiColor = uiColor;
+
+            foreach (HealthBarView view in _freeViews) view.SetStyle(style, uiColor);
+            for (int i = 0; i < _tracked.Count; i++) _tracked[i].View?.SetStyle(style, uiColor);
         }
 
         private void Scan(List<Npc> npcs, float now)
@@ -381,6 +406,7 @@ namespace EnemyHealthBars
             {
                 HealthBarView created = new HealthBarView(_canvasRect);
                 created.SetFont(_font);
+                created.SetStyle(_style, _uiColor);
                 _viewsCreated++;
                 _freeViews.Push(created);
             }

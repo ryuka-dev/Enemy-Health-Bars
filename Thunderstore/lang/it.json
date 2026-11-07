@@ -33,6 +33,34 @@
       "value": "Vicini"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Stile barra"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Aspetto delle barre. Sulfur riprende la barra della salute del gioco e ne segue il colore dell'interfaccia. Colpi è una fila di dieci anelli come l'indicatore delle munizioni. Inchiostro è una scia di inchiostro che cola. Osso ha un teschio in testa alla barra. Classico è una barra semplice."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Colpi"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Inchiostro"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Osso"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Classico"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Distanza massima"
     },

@@ -33,6 +33,34 @@
       "value": "I närheten"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Mätarstil"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Mätarnas utseende. Sulfur matchar spelets egen hälsomätare och följer dess gränssnittsfärg. Patroner är en rad med tio ringar som ammunitionsmätaren. Bläck är en droppande bläckstrimma. Ben har en dödskalle i början av mätaren. Klassisk är en enkel mätare."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Patroner"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Bläck"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Ben"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Klassisk"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Största avstånd"
     },

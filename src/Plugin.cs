@@ -16,6 +16,7 @@ namespace EnemyHealthBars
         internal static ManualLogSource Log;
 
         internal static ConfigEntry<BarDisplayMode> Mode;
+        internal static ConfigEntry<BarStyleId> Style;
         internal static ConfigEntry<float> MaxDistance;
         internal static ConfigEntry<float> BarScale;
         internal static ConfigEntry<bool> ShowName;
@@ -29,6 +30,8 @@ namespace EnemyHealthBars
 
             Mode = Config.Bind("Display", "DisplayMode", BarDisplayMode.Damaged,
                 "Damaged shows a bar for a few seconds after an enemy loses health. Nearby shows a bar on every enemy in range that you can see.");
+            Style = Config.Bind("Display", "BarStyle", BarStyleId.Sulfur,
+                "Look of the bars. Sulfur matches the game's own health bar and follows its UI color. Rounds is a row of ten rings like the ammo gauge. Ichor is a run of dripping ink. Bone has a skull at the head of the bar. Classic is a plain bar.");
             MaxDistance = Config.Bind("Display", "MaxDistance", 30f,
                 new ConfigDescription("Farthest distance in meters at which a bar is shown.",
                     new AcceptableValueRange<float>(5f, 100f)));
@@ -61,6 +64,7 @@ namespace EnemyHealthBars
             _harmony = null;
             BossBarTracker.Reset();
             HealthBarManager.Shutdown();
+            BarStyle.Unload();
         }
     }
 

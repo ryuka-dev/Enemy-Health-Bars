@@ -50,6 +50,11 @@
     <Compile Include="src\**\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Styles\*.png">
+      <LogicalName>EnemyHealthBars.Styles.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="DeployToGaleProfile" AfterTargets="Build" Condition="'$(DeployToSulfurProfile)' == 'true'">
     <ItemGroup>

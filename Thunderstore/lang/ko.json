@@ -33,6 +33,34 @@
       "value": "근처"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "바 스타일"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "바의 모양입니다. 설퍼: 게임의 체력 바와 같은 모양이며 UI 색상을 따릅니다. 탄환: 탄약 게이지처럼 고리 10개가 나란히 표시됩니다. 검은 액체: 흘러내리는 잉크 줄기입니다. 해골: 바 앞쪽에 해골이 붙습니다. 클래식: 단순한 바입니다."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "설퍼"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "탄환"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "검은 액체"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "해골"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "클래식"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "최대 거리"
     },

@@ -33,6 +33,34 @@
       "value": "附近"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "血条样式"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "血条的外观。硫磺：与游戏自身血条一致，并跟随游戏界面颜色。弹孔：十个圆环排成一行，如同弹药量表。黑液：一道滴落的墨迹。骸骨：血条前端带一个骷髅。经典：朴素的血条。"
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "硫磺"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "弹孔"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "黑液"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "骸骨"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "经典"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "最大距离"
     },

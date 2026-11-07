@@ -33,6 +33,34 @@
       "value": "近く"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "バーのスタイル"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "バーの見た目。サルファー：ゲーム本来の体力バーに合わせ、UIカラーに追従します。弾痕：弾薬ゲージのように10個のリングが並びます。黒液：滴るインクの筋です。骸骨：バーの先端に頭蓋骨が付きます。クラシック：シンプルなバーです。"
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "サルファー"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "弾痕"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "黒液"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "骸骨"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "クラシック"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "最大距離"
     },

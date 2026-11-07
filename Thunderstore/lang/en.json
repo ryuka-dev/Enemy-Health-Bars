@@ -33,6 +33,34 @@
       "value": "Nearby"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Bar style"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Look of the bars. Sulfur matches the game's own health bar and follows its UI color. Rounds is a row of ten rings like the ammo gauge. Ichor is a run of dripping ink. Bone has a skull at the head of the bar. Classic is a plain bar."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Rounds"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Ichor"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Bone"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Classic"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Max distance"
     },

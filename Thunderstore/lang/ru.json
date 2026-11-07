@@ -33,6 +33,34 @@
       "value": "Рядом"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Стиль полоски"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Внешний вид полосок. Sulfur повторяет полоску здоровья игры и следует цвету её интерфейса. Патроны — ряд из десяти колец, как индикатор боезапаса. Чернила — стекающая полоса чернил. Кость — череп в начале полоски. Классика — простая полоска."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Патроны"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Чернила"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Кость"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Классика"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Максимальная дистанция"
     },

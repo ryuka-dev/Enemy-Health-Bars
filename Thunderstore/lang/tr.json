@@ -33,6 +33,34 @@
       "value": "Yakındakiler"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Çubuk stili"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Çubukların görünümü. Sulfur, oyunun kendi can çubuğuyla uyumludur ve arayüz rengini izler. Mermiler, cephane göstergesi gibi on halkadan oluşan bir sıradır. Mürekkep, damlayan bir mürekkep izidir. Kemik, çubuğun başında bir kafatası taşır. Klasik, sade bir çubuktur."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Mermiler"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Mürekkep"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Kemik"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Klasik"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Azami mesafe"
     },

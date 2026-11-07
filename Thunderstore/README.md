@@ -21,6 +21,7 @@ Change these in `BepInEx/config/ryuka.sulfur.enemy_health_bars.cfg`, or in game 
 | Setting | Default | What it does |
 |---|---|---|
 | Display mode | Damaged | **Damaged** shows bars only on enemies that lost health. **Nearby** shows bars on every enemy you can see in range, up to 32 at once, nearest first. |
+| Bar style | Sulfur | **Sulfur** matches the game's own health bar and follows its UI color. **Rounds** is a row of ten rings like the ammo gauge. **Ichor** is a run of dripping ink. **Bone** has a skull at the head of the bar. **Classic** is a plain bar. |
 | Max distance | 30 | Farthest distance in meters at which a bar is shown (5 to 100). |
 | Bar scale | 1 | Size of the bars and names (0.5 to 2). |
 | Show name | On | Shows the enemy's name above its bar. |

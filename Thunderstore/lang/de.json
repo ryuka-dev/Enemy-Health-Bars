@@ -33,6 +33,34 @@
       "value": "In der Nähe"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Balkenstil"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Aussehen der Balken. Sulfur entspricht dem Lebensbalken des Spiels und folgt dessen UI-Farbe. Patronen ist eine Reihe aus zehn Ringen wie die Munitionsanzeige. Tinte ist eine tropfende Tintenspur. Knochen hat einen Schädel am Anfang des Balkens. Klassisch ist ein schlichter Balken."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Patronen"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Tinte"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Knochen"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Klassisch"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Maximale Entfernung"
     },

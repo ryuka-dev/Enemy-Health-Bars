@@ -33,6 +33,34 @@
       "value": "À proximité"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Style des barres"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Apparence des barres. Sulfur reprend la barre de vie du jeu et suit la couleur de son interface. Munitions est une rangée de dix anneaux comme la jauge de munitions. Encre est une coulée d'encre. Os place un crâne en tête de barre. Classique est une barre simple."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Munitions"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Encre"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Os"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Classique"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Distance maximale"
     },

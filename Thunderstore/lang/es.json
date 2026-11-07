@@ -33,6 +33,34 @@
       "value": "Cercanos"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Estilo de barra"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Aspecto de las barras. Sulfur imita la barra de vida del juego y sigue el color de su interfaz. Balas es una fila de diez anillos como el indicador de munición. Tinta es un reguero de tinta que gotea. Hueso lleva una calavera al inicio de la barra. Clásico es una barra sencilla."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Balas"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Tinta"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Hueso"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Clásico"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Distancia máxima"
     },

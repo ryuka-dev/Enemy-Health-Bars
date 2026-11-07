@@ -33,6 +33,34 @@
       "value": "Próximos"
     },
     {
+      "key": "entry.Display.BarStyle.name",
+      "value": "Estilo da barra"
+    },
+    {
+      "key": "entry.Display.BarStyle.description",
+      "value": "Aparência das barras. Sulfur imita a barra de vida do jogo e segue a cor da interface. Balas é uma fileira de dez anéis como o indicador de munição. Tinta é um rastro de tinta escorrendo. Osso tem uma caveira no início da barra. Clássico é uma barra simples."
+    },
+    {
+      "key": "value.Display.BarStyle.Sulfur",
+      "value": "Sulfur"
+    },
+    {
+      "key": "value.Display.BarStyle.Rounds",
+      "value": "Balas"
+    },
+    {
+      "key": "value.Display.BarStyle.Ichor",
+      "value": "Tinta"
+    },
+    {
+      "key": "value.Display.BarStyle.Bone",
+      "value": "Osso"
+    },
+    {
+      "key": "value.Display.BarStyle.Classic",
+      "value": "Clássico"
+    },
+    {
       "key": "entry.Display.MaxDistance.name",
       "value": "Distância máxima"
     },
