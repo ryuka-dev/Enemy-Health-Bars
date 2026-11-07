@@ -1,0 +1,93 @@
+[font=Arial Black][color=DarkOrange][size=5][b]Enemy Health Bars[/b][/size][/color][/font]
+
+Standalone health bars for enemies in SULFUR. Hit an enemy and a bar appears above it, fades after a few seconds, and goes away when the enemy dies.
+
+The mod does not change damage, enemy stats, or loot. It only reads what the game already knows and draws it.
+
+[color=RoyalBlue][b]Bar styles[/b][/color]
+
+Five looks, all shown at the moment an enemy takes a hit: the red part is the health left, and the pale part is the health just lost.
+
+[img]https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-default.png[/img]
+
+Sulfur and Rounds follow the game's UI color, so they change with the HUD in areas like the desert.
+
+[img]https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/styles-desert.png[/img]
+
+[color=RoyalBlue][b]In combat[/b][/color]
+
+[img]https://raw.githubusercontent.com/ryuka-dev/Enemy-Health-Bars/main/docs/sulfur-combat-2.gif[/img]
+
+[color=RoyalBlue][b][url=https://github.com/ryuka-dev/Enemy-Health-Bars/blob/main/docs/GALLERY.md]Watch every style in action on GitHub[/url][/b][/color]
+
+8 more clips, covering each style and more fights. They are GIFs of 3 to 18 MB each, about 76 MB in total, so the page can take a while on a slow connection.
+
+[color=RoyalBlue][b]How it behaves[/b][/color]
+
+[list]
+[*]A bar shows after an enemy loses health and fades about six seconds after the last hit.[/*]
+[*]You need a clear line of sight. Enemies behind walls have no bar.[/*]
+[*]Enemies the game is hiding stay hidden: invisible enemies, disguised ambushers, and ghosts while they are faded out.[/*]
+[*]Bosses keep the game's own boss bar and get no second one.[/*]
+[*]Allies, charmed enemies, shopkeepers and other friendly characters have no bar.[/*]
+[*]Bars disappear in menus, the inventory, dialogue, cutscenes and on the death screen.[/*]
+[*]Enemy names use the game's own translations.[/*]
+[/list]
+[color=RoyalBlue][b]Settings[/b][/color]
+
+Change these in [color=#ffff00]BepInEx/config/ryuka.sulfur.enemy_health_bars.cfg[/color], or in game through SULFUR Config if you have it installed.
+
+[color=DodgerBlue][b]Display mode[/b][/color]
+
+[code][Display]
+DisplayMode = Damaged[/code]
+[b]Damaged[/b] shows bars only on enemies that lost health. [b]Nearby[/b] shows bars on every enemy you can see in range, up to 32 at once, nearest first.
+
+[color=DodgerBlue][b]Bar style[/b][/color]
+
+[code][Display]
+BarStyle = Sulfur[/code]
+[b]Sulfur[/b] matches the game's own health bar and follows its UI color. [b]Rounds[/b] is a row of ten rings like the ammo gauge. [b]Ichor[/b] is a run of dripping ink. [b]Bone[/b] has a skull at the head of the bar. [b]Classic[/b] is a plain bar.
+
+[color=DodgerBlue][b]Max distance[/b][/color]
+
+[code][Display]
+MaxDistance = 30[/code]
+Farthest distance in meters at which a bar is shown (5 to 100).
+
+[color=DodgerBlue][b]Bar scale[/b][/color]
+
+[code][Display]
+BarScale = 1[/code]
+Size of the bars and names (0.5 to 2).
+
+[color=DodgerBlue][b]Show name[/b][/color]
+
+[code][Display]
+ShowName = true[/code]
+Shows the enemy's name above its bar.
+
+[color=RoyalBlue][b]Compatibility[/b][/color]
+
+[list]
+[*]Needs only BepInEx. SULFUR Config is optional.[/*]
+[*][b]Battle Improvements[/b] has its own enemy health bar. If you run both, turn off its health bar ([color=#ffff00]EnableHealthBar[/color]) or each enemy shows two bars.[/*]
+[*]Works alongside Damage Sparks.[/*]
+[*]SULFUR Together: everything is local to your game. Bars follow the health the host sends, so on a joining player they can lag slightly behind. Enemies that are invisible until they notice you may not get a bar on a joining player.[/*]
+[/list]
+[color=RoyalBlue][b]Issues[/b][/color]
+
+Report problems at https://github.com/ryuka-dev/Enemy-Health-Bars/issues.
+
+[font=Arial Black][color=DarkOrange][size=5][b]Changelog[/b][/size][/color][/font]
+
+[color=RoyalBlue][b]0.1.0[/b][/color]
+
+First release.
+
+[list]
+[*]Health bars over enemies that lost health, with the enemy's name in the game's own translation.[/*]
+[*]A Nearby mode that shows bars on every enemy you can see in range.[/*]
+[*]Five bar styles, led by one that matches the game's own health bar and follows its UI color.[/*]
+[*]Bars need a clear line of sight and never reveal enemies the game is hiding.[/*]
+[/list]
