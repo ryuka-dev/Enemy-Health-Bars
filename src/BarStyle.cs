@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using HarmonyLib;
+using PerfectRandom.Sulfur.Core;
 using UnityEngine;
 
 namespace EnemyHealthBars
@@ -46,6 +47,29 @@ namespace EnemyHealthBars
         public Sprite Back { get; private set; }
         public Sprite Fill { get; private set; }
         public Sprite Frame { get; private set; }
+
+        /// <summary>The team mark for one, two and three other players; null if the style has none.</summary>
+        public Sprite[] Marks { get; private set; }
+
+        /// <summary>Drawn over the bar while it shows a mark (Bone's orange eyes); null for most styles.</summary>
+        public Sprite MarkEyes { get; private set; }
+
+        /// <summary>Where the mark sprite and its skull go, in canvas units with y up from the bar's bottom left.</summary>
+        public Rect MarkRect { get; private set; }
+
+        /// <summary>The point the mark scales around (its pop, and its minimum size), same units.</summary>
+        public Vector2 MarkPivot { get; private set; }
+
+        public bool MarkBehind { get; private set; }
+
+        /// <summary>The skull's centre; its height is 0 for a style without one.</summary>
+        public Vector2 SkullCentre { get; private set; }
+        public float SkullHeight { get; private set; }
+        public float SkullAngle { get; private set; }
+
+        /// <summary>Tint of the skull's bone, and of its sockets and mouth (alpha 0 leaves them see-through).</summary>
+        public Color SkullBoneColor { get; private set; }
+        public Color SkullHoleColor { get; private set; }
 
         public float FillAmount(float health)
         {
@@ -98,14 +122,117 @@ namespace EnemyHealthBars
                 style.Fill = LoadSprite(id, "fill");
                 style.Frame = LoadSprite(id, "frame");
                 style.Size = style.Back.rect.size / BarArt.PixelsPerCanvasUnit;
-                return style;
             }
             catch (Exception e)
             {
                 Plugin.Log.LogError("Bar style " + id + " could not be loaded: " + e.Message);
                 return null;
             }
+
+            LoadMarks(style);
+            return style;
         }
+
+        /// <summary>
+        /// A style whose mark fails to load still draws its bars; it only shows no marks, which leaves them
+        /// to SULFUR Together's own icon.
+        /// </summary>
+        private static void LoadMarks(BarStyle style)
+        {
+            MarkLayout layout;
+            if (!Layouts.TryGetValue(style.Id, out layout)) return;
+
+            try
+            {
+                Sprite[] marks = new Sprite[HealthBarIntegration.MaxMarks];
+                for (int i = 0; i < marks.Length; i++) marks[i] = LoadSprite(style.Id, "mark" + (i + 1));
+                style.MarkEyes = layout.HasEyes ? LoadSprite(style.Id, "eyes") : null;
+
+                // The generator measures from the top left; the view from the bottom left.
+                float barHeight = style.Size.y;
+                Vector2 size = marks[0].rect.size / BarArt.PixelsPerCanvasUnit;
+                style.MarkRect = new Rect(layout.Left, barHeight - layout.Top - size.y, size.x, size.y);
+                style.MarkPivot = new Vector2(layout.PivotX, barHeight - layout.PivotY);
+                style.SkullCentre = new Vector2(layout.SkullX, barHeight - layout.SkullY);
+                style.SkullHeight = layout.SkullHeight;
+                style.SkullAngle = layout.SkullAngle;
+                style.MarkBehind = layout.Behind;
+                style.SkullBoneColor = layout.SkullBone;
+                style.SkullHoleColor = layout.SkullHoles;
+                style.Marks = marks;
+            }
+            catch (Exception e)
+            {
+                style.Marks = null;
+                style.MarkEyes = null;
+                Plugin.Log.LogError("Team marks for bar style " + style.Id + " could not be loaded: " + e.Message);
+            }
+        }
+
+        private struct MarkLayout
+        {
+            public float Left, Top, PivotX, PivotY, SkullX, SkullY, SkullHeight, SkullAngle;
+            public bool Behind, HasEyes;
+            public Color SkullBone, SkullHoles;
+        }
+
+        // The skull's colors: dark, or orange with dark sockets where it hangs on its own (Ichor's drip).
+        private static readonly Color SkullDark = new Color(29f / 255f, 59f / 255f, 51f / 255f, 1f);
+        private static readonly Color SeeThrough = new Color(0f, 0f, 0f, 0f);
+
+        private static readonly Dictionary<BarStyleId, MarkLayout> Layouts = new Dictionary<BarStyleId, MarkLayout>
+        {
+            {
+                BarStyleId.Sulfur, new MarkLayout
+                {
+                    Left = BarArt.SulfurMarkLeft, Top = BarArt.SulfurMarkTop,
+                    PivotX = BarArt.SulfurMarkPivotX, PivotY = BarArt.SulfurMarkPivotY,
+                    SkullX = BarArt.SulfurSkullX, SkullY = BarArt.SulfurSkullY,
+                    SkullHeight = BarArt.SulfurSkullHeight, SkullAngle = BarArt.SulfurSkullAngle,
+                    Behind = BarArt.SulfurMarkBehind, SkullBone = SkullDark, SkullHoles = SeeThrough
+                }
+            },
+            {
+                BarStyleId.Rounds, new MarkLayout
+                {
+                    Left = BarArt.RoundsMarkLeft, Top = BarArt.RoundsMarkTop,
+                    PivotX = BarArt.RoundsMarkPivotX, PivotY = BarArt.RoundsMarkPivotY,
+                    SkullX = BarArt.RoundsSkullX, SkullY = BarArt.RoundsSkullY,
+                    SkullHeight = BarArt.RoundsSkullHeight, SkullAngle = BarArt.RoundsSkullAngle,
+                    Behind = BarArt.RoundsMarkBehind, SkullBone = SkullDark, SkullHoles = SeeThrough
+                }
+            },
+            {
+                BarStyleId.Ichor, new MarkLayout
+                {
+                    Left = BarArt.IchorMarkLeft, Top = BarArt.IchorMarkTop,
+                    PivotX = BarArt.IchorMarkPivotX, PivotY = BarArt.IchorMarkPivotY,
+                    SkullX = BarArt.IchorSkullX, SkullY = BarArt.IchorSkullY,
+                    SkullHeight = BarArt.IchorSkullHeight, SkullAngle = BarArt.IchorSkullAngle,
+                    Behind = BarArt.IchorMarkBehind, SkullBone = SulfurConstants.COLOR_SulfurYellow, SkullHoles = SkullDark
+                }
+            },
+            {
+                BarStyleId.Bone, new MarkLayout
+                {
+                    Left = BarArt.BoneMarkLeft, Top = BarArt.BoneMarkTop,
+                    PivotX = BarArt.BoneMarkPivotX, PivotY = BarArt.BoneMarkPivotY,
+                    SkullX = BarArt.BoneSkullX, SkullY = BarArt.BoneSkullY,
+                    SkullHeight = BarArt.BoneSkullHeight, SkullAngle = BarArt.BoneSkullAngle,
+                    Behind = BarArt.BoneMarkBehind, HasEyes = true, SkullBone = SkullDark, SkullHoles = SeeThrough
+                }
+            },
+            {
+                BarStyleId.Classic, new MarkLayout
+                {
+                    Left = BarArt.ClassicMarkLeft, Top = BarArt.ClassicMarkTop,
+                    PivotX = BarArt.ClassicMarkPivotX, PivotY = BarArt.ClassicMarkPivotY,
+                    SkullX = BarArt.ClassicSkullX, SkullY = BarArt.ClassicSkullY,
+                    SkullHeight = BarArt.ClassicSkullHeight, SkullAngle = BarArt.ClassicSkullAngle,
+                    Behind = BarArt.ClassicMarkBehind, SkullBone = SkullDark, SkullHoles = SeeThrough
+                }
+            }
+        };
 
         /// <summary>
         /// By reflection because the module cannot be referenced from net472: it needs netstandard

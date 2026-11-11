@@ -6,6 +6,7 @@
     <SulfurBepInExCoreDir Condition="'$(SulfurBepInExCoreDir)' == ''">$(SulfurGaleProfileDir)\BepInEx\core</SulfurBepInExCoreDir>
     <SulfurBepInExPluginsDir Condition="'$(SulfurBepInExPluginsDir)' == ''">$(SulfurGaleProfileDir)\BepInEx\plugins</SulfurBepInExPluginsDir>
     <ThunderstoreDir Condition="'$(ThunderstoreDir)' == ''">$(MSBuildThisFileDirectory)Thunderstore</ThunderstoreDir>
+    <SulfurTogetherDir Condition="'$(SulfurTogetherDir)' == ''">C:\Users\LingYun67\source\SULFUR Together</SulfurTogetherDir>
     <SulfurPluginFolderName Condition="'$(SulfurPluginFolderName)' == ''">EnemyHealthBars</SulfurPluginFolderName>
   </PropertyGroup>
 </Project>

@@ -35,6 +35,8 @@ namespace EnemyHealthBars
         private const float StealMargin = 3f;
         private const float FontRetrySeconds = 1f;
         private const float ErrorLogSeconds = 10f;
+        private const float MarkReadInterval = 0.5f;
+        private const float MarkVisibleAlpha = 0.5f;
 
         private static HealthBarManager _instance;
 
@@ -57,6 +59,14 @@ namespace EnemyHealthBars
 
         private float _nextErrorLog;
         private bool _overlapChecked;
+
+        // The last frame the bars were updated and on screen. A mark drawn in a frame whose update then
+        // failed (and hid the canvas) does not count as shown.
+        private int _shownFrame = int.MinValue;
+
+        private bool _marksOn;
+        private float _nextMarkRead;
+        private Sprite _skull;
 
         public static void EnsureExists()
         {
@@ -112,6 +122,7 @@ namespace EnemyHealthBars
             try
             {
                 Tick();
+                if (_canvas.enabled) _shownFrame = Time.frameCount;
             }
             catch (Exception e)
             {
@@ -152,7 +163,70 @@ namespace EnemyHealthBars
                 Scan(game.aliveNpcs, now);
             }
 
+            RefreshMarks(now);
             UpdateBars(game, player, camera, now);
+        }
+
+        /// <summary>
+        /// Reads the team marks for the enemies that have a bar: after the integration reports a change,
+        /// and twice a second in case a change went unreported. An enemy without a bar is read when it
+        /// gets one. Nothing here runs without an integration, and the skull portrait loads only with one.
+        /// </summary>
+        private void RefreshMarks(float now)
+        {
+            if (!HealthBarIntegration.HasMarkSource)
+            {
+                if (!_marksOn) return;
+
+                _marksOn = false;
+                for (int i = 0; i < _tracked.Count; i++) _tracked[i].Marks = 0;
+                return;
+            }
+
+            _marksOn = true;
+            try
+            {
+                SkullArt.Tick();
+            }
+            catch (Exception e)
+            {
+                // A game update that moved what the skull is loaded through costs the skull, not the bars.
+                SkullArt.GiveUp(e);
+            }
+
+            if (SkullArt.Bone != _skull)
+            {
+                _skull = SkullArt.Bone;
+                foreach (HealthBarView view in _freeViews) view.SetSkull(SkullArt.Bone, SkullArt.Holes, SkullArt.Aspect);
+                for (int i = 0; i < _tracked.Count; i++) _tracked[i].View?.SetSkull(SkullArt.Bone, SkullArt.Holes, SkullArt.Aspect);
+            }
+
+            if (!HealthBarIntegration.TakeMarksChanged() && now < _nextMarkRead) return;
+
+            _nextMarkRead = now + MarkReadInterval;
+            for (int i = 0; i < _tracked.Count; i++)
+            {
+                TrackedEnemy enemy = _tracked[i];
+                if (enemy.View != null && enemy.Npc != null) enemy.Marks = HealthBarIntegration.ReadMarks(enemy.Npc);
+            }
+        }
+
+        /// <summary>
+        /// Whether the bar of this unit shows its team marks: drawn in this frame or the last (the other
+        /// mod may ask before or after this one updates) and not fading. Every other case, including a
+        /// bar hidden behind a menu, leaves the marks to the other mod.
+        /// </summary>
+        internal static bool IsShowingMarks(object unit)
+        {
+            HealthBarManager instance = _instance;
+            UnityEngine.Object obj = unit as UnityEngine.Object;
+            if (instance == null || obj == null) return false;
+
+            int previous = Time.frameCount - 1;
+            TrackedEnemy enemy;
+            return instance._shownFrame >= previous
+                   && instance._byId.TryGetValue(obj.GetInstanceID(), out enemy)
+                   && enemy.MarkDrawnFrame >= previous;
         }
 
         /// <summary>
@@ -337,7 +411,9 @@ namespace EnemyHealthBars
                     name = enemy.Name;
                 }
 
-                enemy.View.Show(position, barScale * distanceScale, enemy.Alpha, health, enemy.Trail, name);
+                bool markDrawn = enemy.View.Show(position, barScale * distanceScale, enemy.Alpha, health, enemy.Trail,
+                    name, enemy.Marks);
+                if (markDrawn && enemy.Alpha >= MarkVisibleAlpha) enemy.MarkDrawnFrame = Time.frameCount;
             }
 
             if (nearestWaiting != null && TryTakeFromFarther(nearestWaiting.Distance))
@@ -406,6 +482,7 @@ namespace EnemyHealthBars
             {
                 HealthBarView created = new HealthBarView(_canvasRect);
                 created.SetFont(_font);
+                created.SetSkull(SkullArt.Bone, SkullArt.Holes, SkullArt.Aspect);
                 created.SetStyle(_style, _uiColor);
                 _viewsCreated++;
                 _freeViews.Push(created);
@@ -414,6 +491,7 @@ namespace EnemyHealthBars
             if (_freeViews.Count == 0) return false;
 
             enemy.View = _freeViews.Pop();
+            enemy.Marks = HealthBarIntegration.ReadMarks(enemy.Npc);
             if (Plugin.DebugLog.Value)
                 Plugin.Log.LogInfo("[Bars] show " + enemy.Npc.name + " at " + enemy.LastHealth);
             return true;

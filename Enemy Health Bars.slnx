@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Enemy Health Bars.csproj" />
+  <Project Path="SulfurTogetherAdapter/EnemyHealthBars.SulfurTogether.csproj" />
+</Solution>

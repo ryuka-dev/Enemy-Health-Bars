@@ -30,6 +30,12 @@ namespace EnemyHealthBars
         public string Name;
         public HealthBarView View;
 
+        /// <summary>Other players' team marks on the enemy, as last read; only kept fresh while it has a bar.</summary>
+        public int Marks;
+
+        /// <summary>Time.frameCount of the last frame its bar drew a mark, visibly.</summary>
+        public int MarkDrawnFrame = int.MinValue;
+
         /// <summary>How far above the head the bar floats.</summary>
         public const float GapAboveHead = 0.2f;
 

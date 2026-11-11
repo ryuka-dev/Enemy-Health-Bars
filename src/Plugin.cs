@@ -65,6 +65,7 @@ namespace EnemyHealthBars
             BossBarTracker.Reset();
             HealthBarManager.Shutdown();
             BarStyle.Unload();
+            SkullArt.Unload();
         }
     }
 

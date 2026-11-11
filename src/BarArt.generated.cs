@@ -16,5 +16,52 @@ namespace EnemyHealthBars
         public const float BoneFillEnd = 131.5f / 136f;
         public const float ClassicFillStart = 1f / 122f;
         public const float ClassicFillEnd = 121f / 122f;
+
+        // Team marks, in the bar's canvas units with y down from the bar's top left.
+        public const float SulfurMarkLeft = 90f;
+        public const float SulfurMarkTop = 8f;
+        public const float SulfurMarkPivotX = 122f;
+        public const float SulfurMarkPivotY = 14f;
+        public const float SulfurSkullX = 120.86f;
+        public const float SulfurSkullY = 35.995f;
+        public const float SulfurSkullHeight = 9.75f;
+        public const float SulfurSkullAngle = -4f;
+        public const bool SulfurMarkBehind = false;
+        public const float RoundsMarkLeft = 137f;
+        public const float RoundsMarkTop = -7.0f;
+        public const float RoundsMarkPivotX = 134f;
+        public const float RoundsMarkPivotY = 12.5f;
+        public const float RoundsSkullX = 145.5f;
+        public const float RoundsSkullY = 16.4f;
+        public const float RoundsSkullHeight = 6.0f;
+        public const float RoundsSkullAngle = 0f;
+        public const bool RoundsMarkBehind = false;
+        public const float IchorMarkLeft = 98f;
+        public const float IchorMarkTop = 10f;
+        public const float IchorMarkPivotX = 124f;
+        public const float IchorMarkPivotY = 12f;
+        public const float IchorSkullX = 128.2f;
+        public const float IchorSkullY = 59.25f;
+        public const float IchorSkullHeight = 19.5f;
+        public const float IchorSkullAngle = 0f;
+        public const bool IchorMarkBehind = true;
+        public const float BoneMarkLeft = -17.5f;
+        public const float BoneMarkTop = -14f;
+        public const float BoneMarkPivotX = 7.5f;
+        public const float BoneMarkPivotY = 11f;
+        public const float BoneSkullX = 0f;
+        public const float BoneSkullY = 0f;
+        public const float BoneSkullHeight = 0f;
+        public const float BoneSkullAngle = 0f;
+        public const bool BoneMarkBehind = true;
+        public const float ClassicMarkLeft = 124f;
+        public const float ClassicMarkTop = -5.5f;
+        public const float ClassicMarkPivotX = 122f;
+        public const float ClassicMarkPivotY = 5.5f;
+        public const float ClassicSkullX = 135.0f;
+        public const float ClassicSkullY = 5.5f;
+        public const float ClassicSkullHeight = 13.6f;
+        public const float ClassicSkullAngle = 0f;
+        public const bool ClassicMarkBehind = false;
     }
 }
