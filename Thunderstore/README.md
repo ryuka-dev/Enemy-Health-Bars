@@ -32,6 +32,20 @@ Sulfur and Rounds follow the game's UI color, so they change with the HUD in are
 - Bars hide in menus and the inventory, during dialogue and cutscenes, and on the death screen.
 - Enemy names follow your game language.
 
+## Team marks in SULFUR Together
+
+With SULFUR Together 1.8.0 or newer, the bars also show team marks. When teammates have marked an enemy, its bar gets one mark for each of them, up to three. Together's skull icon above that enemy is hidden while the bar is up and comes back once the bar is gone.
+
+Each style has its own mark:
+
+- **Sulfur**: dog tags hanging under the bar.
+- **Rounds**: cartridges standing past the end of the bar.
+- **Ichor**: orange drips, the longest one ending in a skull.
+- **Bone**: the skull's eyes turn orange and bones cross behind it.
+- **Classic**: an orange block, plus a stripe for each teammate after the first.
+
+Your own mark doesn't count, same as on Together's icon.
+
 ## Settings
 
 Change these in `BepInEx/config/ryuka.sulfur.enemy_health_bars.cfg`, or in game through SULFUR Config if you have it installed.
@@ -86,7 +100,7 @@ Shows the enemy's name above its bar.
 - Needs only BepInEx. SULFUR Config is optional.
 - **Battle Improvements** has an enemy health bar too. If you run both, turn its bar off (`EnableHealthBar`) or each enemy shows two.
 - Works with Damage Sparks.
-- SULFUR Together: bars are local to your game. If you join someone else's session, bars follow the health the host sends, so they can lag a little, and enemies that stay invisible until they notice you may not get a bar.
+- SULFUR Together: bars are local to your game. If you join someone else's session, bars follow the health the host sends, so they can lag a little, and enemies that stay invisible until they notice you may not get a bar. With a SULFUR Together older than 1.8.0 the bars still work, just without team marks.
 
 ## Issues
 

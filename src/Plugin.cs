@@ -11,7 +11,7 @@ namespace EnemyHealthBars
     {
         public const string PluginGuid = "ryuka.sulfur.enemy_health_bars";
         public const string PluginName = "Enemy Health Bars";
-        public const string PluginVersion = "0.1.0";
+        public const string PluginVersion = "0.2.0";
 
         internal static ManualLogSource Log;
 

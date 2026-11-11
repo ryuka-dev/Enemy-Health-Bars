@@ -15,7 +15,8 @@ namespace EnemyHealthBars.SulfurTogether
     /// guarded non-inlined call, and a missing API leaves one log line instead of a type-load failure.
     /// </summary>
     [BepInPlugin(PluginGuid, PluginName, Plugin.PluginVersion)]
-    [BepInDependency(Plugin.PluginGuid)]
+    // The same version of the mod: an older copy beside this adapter has no HealthBarIntegration.
+    [BepInDependency(Plugin.PluginGuid, Plugin.PluginVersion)]
     [BepInDependency(SulfurTogetherGuid, BepInDependency.DependencyFlags.SoftDependency)]
     public sealed class SulfurTogetherAdapterPlugin : BaseUnityPlugin
     {
