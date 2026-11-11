@@ -15,8 +15,8 @@ namespace EnemyHealthBars
     /// threshold, cut the neck off, keep the main piece. The result is two white masks the bars tint
     /// per style: the bone, and the eye sockets, nose and mouth inside it.
     ///
-    /// Nothing loads until a bar can show a mark. Until the portrait is in, or if it cannot be had, the
-    /// marks show without the skull.
+    /// Nothing loads without an integration that provides marks; with one, the portrait loads once, at the
+    /// first frame the bars are live. Until it is in, or if it cannot be had, the marks show without the skull.
     /// </summary>
     internal static class SkullArt
     {

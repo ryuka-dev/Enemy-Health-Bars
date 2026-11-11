@@ -60,8 +60,8 @@ namespace EnemyHealthBars
         private float _nextErrorLog;
         private bool _overlapChecked;
 
-        // The last frame the bars were updated and on screen. A mark drawn in a frame whose update then
-        // failed (and hid the canvas) does not count as shown.
+        // The frame of the last update that left the bars on screen; int.MinValue after one that hid them
+        // (a gate or a failure). A mark counts as shown only if that update drew it.
         private int _shownFrame = int.MinValue;
 
         private bool _marksOn;
@@ -122,11 +122,12 @@ namespace EnemyHealthBars
             try
             {
                 Tick();
-                if (_canvas.enabled) _shownFrame = Time.frameCount;
+                _shownFrame = _canvas.enabled ? Time.frameCount : int.MinValue;
             }
             catch (Exception e)
             {
                 _canvas.enabled = false;
+                _shownFrame = int.MinValue;
 
                 if (Time.unscaledTime >= _nextErrorLog)
                 {
@@ -170,7 +171,8 @@ namespace EnemyHealthBars
         /// <summary>
         /// Reads the team marks for the enemies that have a bar: after the integration reports a change,
         /// and twice a second in case a change went unreported. An enemy without a bar is read when it
-        /// gets one. Nothing here runs without an integration, and the skull portrait loads only with one.
+        /// gets one. Nothing here runs without an integration, and neither the marks' art nor the skull portrait loads
+        /// without one.
         /// </summary>
         private void RefreshMarks(float now)
         {
@@ -184,6 +186,13 @@ namespace EnemyHealthBars
             }
 
             _marksOn = true;
+            if (_style != null && _style.EnsureMarks())
+            {
+                // The style's marks load with the first integration, not with the style.
+                foreach (HealthBarView view in _freeViews) view.SetStyle(_style, _uiColor);
+                for (int i = 0; i < _tracked.Count; i++) _tracked[i].View?.SetStyle(_style, _uiColor);
+            }
+
             try
             {
                 SkullArt.Tick();
@@ -212,9 +221,10 @@ namespace EnemyHealthBars
         }
 
         /// <summary>
-        /// Whether the bar of this unit shows its team marks: drawn in this frame or the last (the other
-        /// mod may ask before or after this one updates) and not fading. Every other case, including a
-        /// bar hidden behind a menu, leaves the marks to the other mod.
+        /// Whether the bar of this unit shows its team marks: the last update, in this frame or the last
+        /// (the other mod may ask before or after this one updates), left the bars on screen and drew this
+        /// mark, not fading. Every other case, including a bar hidden behind a menu or given to a nearer
+        /// enemy, leaves the marks to the other mod.
         /// </summary>
         internal static bool IsShowingMarks(object unit)
         {
@@ -226,7 +236,7 @@ namespace EnemyHealthBars
             TrackedEnemy enemy;
             return instance._shownFrame >= previous
                    && instance._byId.TryGetValue(obj.GetInstanceID(), out enemy)
-                   && enemy.MarkDrawnFrame >= previous;
+                   && enemy.MarkDrawnFrame == instance._shownFrame;
         }
 
         /// <summary>
@@ -525,6 +535,7 @@ namespace EnemyHealthBars
         private void ReleaseView(TrackedEnemy enemy)
         {
             enemy.Alpha = 0f;
+            enemy.MarkDrawnFrame = int.MinValue;
 
             if (enemy.View == null) return;
 

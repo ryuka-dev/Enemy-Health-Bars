@@ -2,8 +2,8 @@
 
   <!--
     The optional SULFUR Together adapter: a companion BepInEx plugin shipped inside the Enemy Health
-    Bars package. Both [BepInDependency] attributes are hard, so without SULFUR Together BepInEx skips
-    this plugin and never loads this assembly.
+    Bars package. Its dependency on SULFUR Together is soft, so a player without it gets no load error;
+    the plugin checks that SULFUR Together is loaded before anything touches its assembly.
 
     The dependency points one way. This project references the mod; the mod never references this
     project, so a player without SULFUR Together has no path to its assembly.
@@ -21,6 +21,9 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <Deterministic>true</Deterministic>
+    <!-- Without this the SDK adds the mod again as a transitive reference, without Private=false, and copies
+         EnemyHealthBars.dll into this project's output. -->
+    <DisableTransitiveProjectReferences>true</DisableTransitiveProjectReferences>
   </PropertyGroup>
 
   <ItemGroup>

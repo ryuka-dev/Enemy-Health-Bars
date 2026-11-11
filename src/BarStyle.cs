@@ -129,8 +129,21 @@ namespace EnemyHealthBars
                 return null;
             }
 
-            LoadMarks(style);
             return style;
+        }
+
+        private bool _marksTried;
+
+        /// <summary>
+        /// Loads the team marks the first time they are wanted, so a game without an integration decodes
+        /// none of their art. Returns true when this call loaded them.
+        /// </summary>
+        public bool EnsureMarks()
+        {
+            if (_marksTried) return false;
+            _marksTried = true;
+            LoadMarks(this);
+            return Marks != null;
         }
 
         /// <summary>

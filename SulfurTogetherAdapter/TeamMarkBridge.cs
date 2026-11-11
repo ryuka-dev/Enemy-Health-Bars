@@ -21,18 +21,15 @@ namespace EnemyHealthBars.SulfurTogether
     /// </summary>
     internal sealed class TeamMarkBridge : IDisposable
     {
-        private const int TeamMarksApiVersion = 2;
+        public const int TeamMarksApiVersion = 2;
 
         // IDisposable is all SULFUR Together hands back for a registration.
         private IDisposable _presenter;
         private bool _subscribed;
 
-        /// <summary>Null when the installed SULFUR Together has no team marks.</summary>
-        public static TeamMarkBridge TryCreate(out int apiVersion)
+        /// <summary>Only on combat API <see cref="TeamMarksApiVersion"/> or newer.</summary>
+        public static TeamMarkBridge Create()
         {
-            apiVersion = ReadApiVersion();
-            if (apiVersion < TeamMarksApiVersion) return null;
-
             TeamMarkBridge bridge = new TeamMarkBridge();
             try
             {
@@ -61,8 +58,9 @@ namespace EnemyHealthBars.SulfurTogether
             if (_subscribed) Unsubscribe();
         }
 
+        /// <summary>Names only <see cref="NetCombat"/>, which API 1 has too.</summary>
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static int ReadApiVersion()
+        public static int ReadApiVersion()
         {
             return NetCombat.ApiVersion;
         }
